@@ -1,9 +1,10 @@
 #include <iostream>
 #include <cctype>
+#include <cstring>
 
 int	main(int argc, char *argv[])
 {
-	int	i;
+	int	i, j;
 
 	if (argc == 1)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
@@ -12,14 +13,24 @@ int	main(int argc, char *argv[])
 		i = 1;
 		while (i < argc)
 		{
-			std::cout << argv[i];
+			j = 0;
+			while (argv[i][j] != '\0' && (argv[i][j] != ' ' || argv[i][j + 1] != '\0'))
+			{
+				if (argv[i][0] == ' ')
+					j++;
+				std::cout << static_cast<unsigned char>(std::toupper(argv[i][j]));
+				j++;
+			}
+			//std::cout << argv[i];
 			if ((i + 1) != argc)
 				std::cout << ' ';
 			i++;
 		}
 	}
+	//std::cout << '\n';
+	//std::cout << static_cast<unsigned char>(std::toupper('a'));
+	//std::cout << static_cast<unsigned char>(std::toupper(static_cast<unsigned char>('a')));
 	std::cout << '\n';
-	std::cout << std::toupper('a');
-	std::cout << '\n';
+
 	return (0);
 }
