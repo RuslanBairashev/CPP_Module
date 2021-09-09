@@ -1,9 +1,8 @@
-# Makefile for CCP
+# Makefile for CCP00/ex00
 
 NAME = megaphone
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror 
-# HEADER = ./include/philo.h
 SOURCES = megaphone.cpp
 OBJECTS = $(SOURCES:.cpp=.obj)
 
@@ -12,7 +11,7 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	$(CC) -o $(NAME) $(OBJECTS)
 
-%.obj: %.cpp #$(HEADER)
+%.obj: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

@@ -1,4 +1,4 @@
-# Makefile for CCP
+# Makefile for CCP00/ex01
 
 NAME = phonebook
 CC = clang++

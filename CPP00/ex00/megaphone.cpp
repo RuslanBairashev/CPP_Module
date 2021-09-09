@@ -21,15 +21,11 @@ int	main(int argc, char *argv[])
 				std::cout << static_cast<unsigned char>(std::toupper(argv[i][j]));
 				j++;
 			}
-			//std::cout << argv[i];
 			if ((i + 1) != argc)
 				std::cout << ' ';
 			i++;
 		}
 	}
-	//std::cout << '\n';
-	//std::cout << static_cast<unsigned char>(std::toupper('a'));
-	//std::cout << static_cast<unsigned char>(std::toupper(static_cast<unsigned char>('a')));
 	std::cout << '\n';
 
 	return (0);
