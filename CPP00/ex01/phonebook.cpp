@@ -1,6 +1,4 @@
-#include <iostream>
-#include <cctype>
-#include <cstring>
+#include "phonebook.hpp"
 
 int	main()
 {
