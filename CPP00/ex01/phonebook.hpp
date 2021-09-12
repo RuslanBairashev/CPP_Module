@@ -11,8 +11,10 @@ private:
     /* data */
 public:
     std::string m_name;
-    phonebook(/* args */);
-    ~phonebook();
+    std::string m_array[40];
+    int         cont_number;
+    //phonebook(/* args */);
+    //~phonebook();
 };
 
 #endif
