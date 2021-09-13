@@ -23,19 +23,47 @@ void	move_list_up(phonebook *c_name)
 	c_name->cont_number = (book_size - 1);
 }
 
-void	search_contact(phonebook *c_name)
+void	print_line(phonebook *c_name, int line_num)
 {
 	std::string	tmp;
+
+	for (int i = line_num * 5; i < 5 * (line_num + 1); i++)
+	{
+		std::string tmp = c_name->m_array[i].substr(0, 9);
+		if (c_name->m_array[i].length() > 9)
+			std::cout << tmp << ".";
+		else
+		{
+			for (int j = c_name->m_array[i].length(); j < 10; j++)
+			{
+				std::cout << " ";
+			}
+			std::cout << tmp;
+		}
+		if (((i + 1) % 5) != 0)
+			std::cout << "|";
+	}
+	std::cout << "\n";
+}
+
+void	search_contact(phonebook *c_name)
+{
+	//std::string	tmp;
 	
 	std::cout << "     INDEX|FIRST NAME| LAST NAME|  NICKNAME\n";
 	for (int i = 0; i < c_name->cont_number; i++)
 	{
-		std::string tmp = c_name->m_array[0].substr(0, 9);
-		if (c_name->m_array[0].length() > 9)
+		print_line(c_name, i);
+	}
+	/*
+	for (int i = 0; i < c_name->cont_number * 5; i++)
+	{
+		std::string tmp = c_name->m_array[i].substr(0, 9);
+		if (c_name->m_array[i].length() > 9)
 			std::cout << tmp << ".";
 		else
 		{
-			for (int i = c_name->m_array[0].length(); i < 10; i++)
+			for (int j = c_name->m_array[i].length(); j < 10; j++)
 			{
 				std::cout << " ";
 			}
@@ -43,6 +71,7 @@ void	search_contact(phonebook *c_name)
 		}
 		std::cout << "\n";
 	}
+	*/
 }
 
 void	add_contact(phonebook *c_name)
