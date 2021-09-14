@@ -18,7 +18,6 @@ void	add_contact(phonebook *c_name)
 	if (c_name->contact_count > (book_size - 1))
 		move_list_up(c_name);
 	std::cout << "ENTER NEW CONTACT'S FIRST NAME\n";
-	//std::cin.ignore(32767, '\n');
 	std::getline(std::cin, c_name->m_array[c_name->contact_count * 5 + 0]);
 	std::cout << "ENTER NEW CONTACT'S LAST NAME\n";
 	std::getline(std::cin, c_name->m_array[c_name->contact_count * 5 + 1]);

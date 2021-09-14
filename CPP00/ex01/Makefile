@@ -3,8 +3,7 @@
 NAME = phonebook
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror 
-# HEADER = ./include/philo.h
-SOURCES = phonebook.cpp add.cpp
+SOURCES = phonebook.cpp add.cpp search.cpp
 OBJECTS = $(SOURCES:.cpp=.obj)
 
 all: $(NAME)
@@ -12,7 +11,7 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	$(CC) -o $(NAME) $(OBJECTS)
 
-%.obj: %.cpp #$(HEADER)
+%.obj: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
