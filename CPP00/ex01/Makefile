@@ -4,7 +4,7 @@ NAME = phonebook
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror 
 # HEADER = ./include/philo.h
-SOURCES = phonebook.cpp
+SOURCES = phonebook.cpp add.cpp
 OBJECTS = $(SOURCES:.cpp=.obj)
 
 all: $(NAME)

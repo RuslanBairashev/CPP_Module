@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cctype>
 #include <cstring>
+#include <cstdlib>
 
 const int   book_size = 2;
 
@@ -19,5 +20,8 @@ public:
     //phonebook(/* args */);
     //~phonebook();
 };
+
+void	move_list_up(phonebook *c_name);
+void	add_contact(phonebook *c_name);
 
 #endif

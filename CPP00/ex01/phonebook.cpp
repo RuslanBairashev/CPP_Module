@@ -10,17 +10,9 @@ void	init_phonebook(phonebook *c_name)
 	}
 }
 
-void	move_list_up(phonebook *c_name)
+bool	check_input(const std::string &str)
 {
-	for (int i = 0; i < (book_size - 1); i++)
-	{
-		c_name->m_array[i * 5 + 0] = c_name->m_array[(i + 1) * 5 + 0];
-		c_name->m_array[i * 5 + 1] = c_name->m_array[(i + 1) * 5 + 1];
-		c_name->m_array[i * 5 + 2] = c_name->m_array[(i + 1) * 5 + 2];
-		c_name->m_array[i * 5 + 3] = c_name->m_array[(i + 1) * 5 + 3];
-		c_name->m_array[i * 5 + 4] = c_name->m_array[(i + 1) * 5 + 4];
-	}
-	c_name->cont_number = (book_size - 1);
+	return str.find_first_not_of("0123456789") == std::string::npos;
 }
 
 void	print_line(phonebook *c_name, int line_num)
@@ -46,7 +38,7 @@ void	print_line(phonebook *c_name, int line_num)
 	}
 	std::cout << "\n";
 }
-
+/*
 int	get_index(phonebook *c_name)
 {
 	int index;
@@ -62,9 +54,8 @@ int	get_index(phonebook *c_name)
 		std::cin.ignore(32767,'\n'); // удаляем лишние значения
 		return index;
 	}
-
 }
-
+*/
 void	search_contact(phonebook *c_name)
 {
 	std::cout << "     INDEX|FIRST NAME| LAST NAME|  NICKNAME\n";
@@ -72,31 +63,38 @@ void	search_contact(phonebook *c_name)
 	{
 		print_line(c_name, i);
 	}
-	std::cout << "ENTER CONTACT'S INDEX TO DISPLAY:\n";
-	int index;
-	index = get_index(c_name);
-
-
+	std::string str;
+	bool is_digit;
+	while (true)
+	{
+		std::cout << "ENTER CONTACT'S INDEX TO DISPLAY:\n";
+		while (true)
+		{
+			std::cin.clear();
+			std::cin.ignore(32767, '\n');
+			std::getline(std::cin, str);
+			//std::cin >> str;
+			is_digit = check_input(str);
+			if (is_digit)
+			{
+				std::cout << "azaza\n";
+				break ;
+			}
+	
+			std::cout << "INPUT IS NOT VALID. TRY AGAIN.\n";
+		}
+		int	index = std::atoi(str.c_str());
+		if (index >= 0 && index <= c_name->cont_number)
+		{
+			std::cout << "!";
+			break ;
+		}
+		else
+			std::cout << "INDEX IS OUT OF RANGE. TRY AGAIN\n";
+	}
 }
 
-void	add_contact(phonebook *c_name)
-{
-	if (c_name->cont_number > (book_size - 1))
-		move_list_up(c_name);
-	std::cout << "ENTER NEW CONTACT'S FIRST NAME\n";
-	std::cin.ignore(32767, '\n');
-	std::getline(std::cin, c_name->m_array[c_name->cont_number * 5 + 0]);
-	std::cout << "ENTER NEW CONTACT'S LAST NAME\n";
-	std::getline(std::cin, c_name->m_array[c_name->cont_number * 5 + 1]);
-	std::cout << "ENTER NEW CONTACT'S NICKNAME\n";
-	std::getline(std::cin, c_name->m_array[c_name->cont_number * 5 + 2]);
-	std::cout << "ENTER NEW CONTACT'S PHONE NUMBER\n";
-	std::getline(std::cin, c_name->m_array[c_name->cont_number * 5 + 3]);
-	std::cout << "ENTER NEW CONTACT'S DARKEST SECRET\n";
-	std::getline(std::cin, c_name->m_array[c_name->cont_number * 5 + 4]);
-	std::cout << "NEW CONTACT ADDED!\n";
-	c_name->cont_number++;
-}
+
 
 int	main()
 {
