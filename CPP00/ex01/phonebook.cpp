@@ -2,7 +2,7 @@
 
 void	init_phonebook(phonebook *c_name)
 {
-	c_name->cont_number = 0;
+	c_name->contact_count = 0;
 	c_name->m_search = "";
 	for (int i = 0; i < (book_size * 5); i++)
 	{
@@ -13,6 +13,15 @@ void	init_phonebook(phonebook *c_name)
 bool	check_input(const std::string &str)
 {
 	return str.find_first_not_of("0123456789") == std::string::npos;
+}
+
+void	print_contact(phonebook *c_name, int index)
+{
+	std::cout << "FIRST NAME    : " << c_name->m_array[index * 5 + 0] << "\n";
+	std::cout << "LAST NAME     : " << c_name->m_array[index * 5 + 1] << "\n";
+	std::cout << "NICKNAME      : " << c_name->m_array[index * 5 + 2] << "\n";
+	std::cout << "phone number  : " << c_name->m_array[index * 5 + 3] << "\n";
+	std::cout << "darkest secret: " << c_name->m_array[index * 5 + 4] << "\n";
 }
 
 void	print_line(phonebook *c_name, int line_num)
@@ -59,38 +68,42 @@ int	get_index(phonebook *c_name)
 void	search_contact(phonebook *c_name)
 {
 	std::cout << "     INDEX|FIRST NAME| LAST NAME|  NICKNAME\n";
-	for (int i = 0; i < c_name->cont_number; i++)
+	for (int i = 0; i < c_name->contact_count; i++)
 	{
 		print_line(c_name, i);
 	}
 	std::string str;
 	bool is_digit;
+	//std::cin.ignore(32767, '\n');
 	while (true)
 	{
 		std::cout << "ENTER CONTACT'S INDEX TO DISPLAY:\n";
 		while (true)
 		{
-			std::cin.clear();
-			std::cin.ignore(32767, '\n');
+			//std::cin.clear();
+			//std::cin.ignore(32767, '\n');
 			std::getline(std::cin, str);
 			//std::cin >> str;
 			is_digit = check_input(str);
 			if (is_digit)
 			{
-				std::cout << "azaza\n";
+				//std::cout << "is digit\n";
 				break ;
 			}
 	
 			std::cout << "INPUT IS NOT VALID. TRY AGAIN.\n";
 		}
 		int	index = std::atoi(str.c_str());
-		if (index >= 0 && index <= c_name->cont_number)
+		if (index >= 0 && index < c_name->contact_count)
 		{
-			std::cout << "!";
+			print_contact(c_name, index);
+			//std::cout << "index ok!\n";
+			//if (index == 0)
+			//	std::cout << "index = 0\n";
 			break ;
 		}
 		else
-			std::cout << "INDEX IS OUT OF RANGE. TRY AGAIN\n";
+			std::cout << "INDEX IS OUT OF RANGE.\n";
 	}
 }
 
@@ -105,12 +118,17 @@ int	main()
 	do
 	{
 	std::cout << "ENTER COMMAND(ADD/SEARCH/EXIT):\n";
-	std::cin >> command;
+	//std::cin >> command;
+	std::getline(std::cin, command);
 	if (command == "ADD")
 		add_contact(&kniga);
-	if (command == "SEARCH")
+	else if (command == "SEARCH")
 		search_contact(&kniga);
-	std::cout << command << " command has been entered\n";
+	else if (command != "EXIT")
+	{
+		std::cout << command << ": not a valid command\n";
+		//std::cin.ignore(32767, '\n');
+	}
 	}
 	while (command != "EXIT");
 	for(int i = 0; i < (book_size * 5); i++)

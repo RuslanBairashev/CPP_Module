@@ -13,8 +13,7 @@ class phonebook
 private:
     /* data */
 public:
-    int         cont_number;
-    //const int   book_size = 8;
+    int         contact_count;
     std::string m_search;
     std::string m_array[book_size * 5];
     //phonebook(/* args */);
