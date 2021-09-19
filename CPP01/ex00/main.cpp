@@ -8,8 +8,15 @@ void	announce(void)
 int	main()
 {
 	Zombie	decay;
-	std::string stringi;
-	std::getline(std::cin, stringi);
-	announce();
+	Zombie	*zomby = new Zombie;
+
+	std::string in_decay;
+	std::string in_zomby;
+	std::cout << "Please, enter zombi name for stack:\n";
+	std::getline(std::cin, in_decay);
+	decay.randomChump(in_decay);
+	std::cout << "Please, enter zombi name for heap:\n";
+	std::getline(std::cin, in_zomby);
+	zomby->newZombie(in_zomby);
 	return (0);
 }
