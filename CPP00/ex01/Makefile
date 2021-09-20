@@ -2,7 +2,7 @@
 
 NAME = phonebook
 CC = clang++
-CFLAGS = -Wall -Wextra -Werror 
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 SOURCES = phonebook.cpp add.cpp search.cpp
 OBJECTS = $(SOURCES:.cpp=.obj)
 

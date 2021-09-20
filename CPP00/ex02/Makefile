@@ -2,7 +2,7 @@
 
 NAME = Account
 CC = clang++
-CFLAGS = -Wall -Wextra -Werror 
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 SOURCES = Account.cpp
 OBJECTS = $(SOURCES:.cpp=.obj)
 

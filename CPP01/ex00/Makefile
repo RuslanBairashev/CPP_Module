@@ -2,14 +2,14 @@
 
 NAME = Zombie
 CC = clang++
-CFLAGS = -Wall -Wextra -Werror 
-SOURCES = main.cpp newZombie.cpp randomChump.cpp
+CFLAGS = -Wall -Wextra -Werror -std=c++98
+SOURCES = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 OBJECTS = $(SOURCES:.cpp=.obj)
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	$(CC) -o $(NAME) $(OBJECTS)
+	$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
 
 %.obj: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@

@@ -6,13 +6,13 @@
 #include <cstring>
 #include <cstdlib>
 
-const int   book_size = 8;
+const int	book_size = 8;
 
 class phonebook
 {
 public:
-    int         contact_count;
-    std::string m_array[book_size * 5];
+	int			contact_count;
+	std::string	m_array[book_size * 5];
 };
 
 void	move_list_up(phonebook *c_name);

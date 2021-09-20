@@ -11,8 +11,10 @@ class Zombie
 public:
 	Zombie();
 	~Zombie();
+	
 	Zombie*	newZombie( std::string name );
 	void	randomChump( std::string name );
+	Zombie* Zombies( std::string name );
 
 private:
 	std::string m_name;
