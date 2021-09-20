@@ -1,5 +1,5 @@
 #include "phonebook.hpp"
-
+/*
 bool	check_input(const std::string &str)
 {
 	return str.find_first_not_of("0123456789") == std::string::npos;
@@ -37,11 +37,13 @@ void	print_line(phonebook *c_name, int line_num)
 	}
 	std::cout << "\n";
 }
+*/
 
-
-void	search_contact(phonebook *c_name)
+void	phonebook::search_contact(phonebook *c_name)
 {
 	std::cout << "     INDEX|FIRST NAME| LAST NAME|  NICKNAME\n";
+	std::cout << c_name->_array[0].getFirstname();
+	/*
 	for (int i = 0; i < c_name->contact_count; i++)
 		print_line(c_name, i);
 	std::string str;
@@ -66,4 +68,5 @@ void	search_contact(phonebook *c_name)
 		else
 			std::cout << "INDEX IS OUT OF RANGE.\n";
 	}
+	*/
 }

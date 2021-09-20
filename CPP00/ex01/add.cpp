@@ -1,5 +1,5 @@
 #include "phonebook.hpp"
-
+/*
 void	move_list_up(phonebook *c_name)
 {
 	for (int i = 0; i < (book_size - 1); i++)
@@ -12,13 +12,16 @@ void	move_list_up(phonebook *c_name)
 	}
 	c_name->contact_count = (book_size - 1);
 }
-
-void	add_contact(phonebook *c_name)
+*/
+void	phonebook::add_contact(phonebook *c_name)
 {
-	if (c_name->getContact_count > (book_size - 1))
-		move_list_up(c_name);
+	std::string	tmp;
+	//if (c_name->getContact_count > (book_size - 1))
+	//	move_list_up(c_name);
 	std::cout << "ENTER NEW CONTACT'S FIRST NAME\n";
-	std::getline(std::cin, c_name->m_array[c_name->contact_count * 5 + 0]);
+	std::getline(std::cin, tmp);
+	c_name->_array[contact_count].setFirstname(tmp);
+	/*
 	std::cout << "ENTER NEW CONTACT'S LAST NAME\n";
 	std::getline(std::cin, c_name->m_array[c_name->contact_count * 5 + 1]);
 	std::cout << "ENTER NEW CONTACT'S NICKNAME\n";
@@ -27,6 +30,6 @@ void	add_contact(phonebook *c_name)
 	std::getline(std::cin, c_name->m_array[c_name->contact_count * 5 + 3]);
 	std::cout << "ENTER NEW CONTACT'S DARKEST SECRET\n";
 	std::getline(std::cin, c_name->m_array[c_name->contact_count * 5 + 4]);
-	std::cout << "NEW CONTACT ADDED!\n";
+	std::cout << "NEW CONTACT ADDED!\n";*/
 	c_name->contact_count++;
 }
