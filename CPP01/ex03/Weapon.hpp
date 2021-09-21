@@ -10,10 +10,10 @@ public:
 	Weapon(std::string str);
 
 	void		setType(std::string str){ _type = str; }
-	std::string	getType() const { return _type; }
+	std::string&	getType() const { return _type; }
 
 private:
-	std::string	_type;
+	static std::string	_type;
 };
 
 #endif
