@@ -1,17 +1,9 @@
 #include "phonebook.hpp"
-/*
-void	init_phonebook(phonebook *c_name)
-{
-	c_name->contact_count = 0;
-	for (int i = 0; i < (book_size * 5); i++)
-		c_name->m_array[i] = "";
-}
-*/
+
 int	main()
 {
 	phonebook kniga;
 	
-	//init_phonebook(&kniga);
 	std::string command("default");
 	do
 	{

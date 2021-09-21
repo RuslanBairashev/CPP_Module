@@ -33,21 +33,21 @@ public:
 class phonebook
 {
 private:
-	int		contact_count;
+	int		_contact_count;
 	Contact	_array[book_size];
 
 public:
 	phonebook()
 	{
-		contact_count = 0;
+		_contact_count = 0;
 	};
 
-	int		getContact_count();
+	int		getContact_count() const { return _contact_count; }
+	void	add_contact(phonebook *c_name);
 	void	move_list_up(phonebook *c_name);
-	void	add_contact(phonebook *c_name);//none
 	bool	check_input(const std::string &str);
 	void	print_contact(phonebook *c_name, int index);
-	void	print_line(phonebook *c_name, int line_num);
+	void	print_line(phonebook *c_name);
 	void	search_contact(phonebook *c_name);
 };
 
