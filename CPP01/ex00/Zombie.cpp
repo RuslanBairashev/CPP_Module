@@ -5,9 +5,14 @@ Zombie::Zombie()
 	std::cout << "Constructed\n";
 }
 
+Zombie::Zombie(std::string str) : m_name(str)
+{
+	std::cout << "Constructed\n";
+}
+
 Zombie::~Zombie()
 {
-	std::cout << m_name << " is destructed\n";
+	std::cout << this->m_name << " is destructed\n";
 }
 
 void	Zombie::announce(void)
