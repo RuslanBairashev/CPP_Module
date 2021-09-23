@@ -1,15 +1,15 @@
-# Makefile for CCP00/ex02
+# Makefile for CCP01/ex05
 
-NAME = Account
+NAME = karen
 CC = clang++
-CFLAGS = #-Wall -Wextra -Werror -std=c++98
-SOURCES = Account.cpp tests.cpp
+CFLAGS = -Wall -Wextra -Werror -std=c++98
+SOURCES = main.cpp Karen.cpp
 OBJECTS = $(SOURCES:.cpp=.obj)
 
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	$(CC) -o $(NAME) $(OBJECTS)
+	$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
 
 %.obj: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
