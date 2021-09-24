@@ -32,7 +32,7 @@ permissions! Can't open ", av[1]));
 		str.reserve(ifs.tellg());
 		ifs.seekg(0, std::ios::beg);
 		str.assign((std::istreambuf_iterator<char>(ifs)),
-            std::istreambuf_iterator<char>());
+			std::istreambuf_iterator<char>());
 		int	str_len = str.length();
 		if (!str_len)
 			return (error_mesag("Error: input file is empty!", ""));

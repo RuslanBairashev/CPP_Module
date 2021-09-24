@@ -34,7 +34,5 @@ void	phonebook::add_contact(phonebook *c_name)
 	std::getline(std::cin, tmp);
 	c_name->_array[_contact_count].setSecret(tmp);
 	std::cout << "NEW CONTACT ADDED!\n";
-	std::cout << "1getContact_count()= " << getContact_count() << std::endl;
 	c_name->_contact_count++;
-	std::cout << "2getContact_count()= " << getContact_count() << std::endl;
 }
