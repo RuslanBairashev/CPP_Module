@@ -27,15 +27,12 @@ void	Karen::complain( std::string level )
 	case DEBUG:
 		this->debug();
 		std::cout << std::endl;
-		//break;
 	case INFO:
 		this->info();
 		std::cout << std::endl;
-		//break;
 	case WARNING:
 		this->warning();
 		std::cout << std::endl;
-		//break;
 	case ERROR:
 		this->error();
 		std::cout << std::endl;
@@ -48,19 +45,19 @@ void	Karen::complain( std::string level )
 
 void	Karen::debug( void )
 {
-	std::cout << "Debug funcion OK." <<std::endl;
+	std::cout << "[ DEBUG ]" << std::endl << "Debug funcion OK." <<std::endl;
 }
 
 void	Karen::info( void )
 {
-	std::cout << "Info funcion OK." <<std::endl;
+	std::cout << "[ INFO ]" << std::endl << "Info funcion OK." <<std::endl;
 }
 void	Karen::warning( void )
 {
-	std::cout << "Warning funcion OK." <<std::endl;
+	std::cout << "[ WARNING ]" << std::endl << "Warning funcion OK." <<std::endl;
 }
 void	Karen::error( void )
 {
-	std::cout << "Error funcion OK." <<std::endl;
+	std::cout << "[ ERROR ]" << std::endl << "Error funcion OK." <<std::endl;
 	std::cout << "_________________" <<std::endl;
 }

@@ -2,6 +2,7 @@
 
 enum	levels
 	{
+		NOT_DEFINED,
 		DEBUG,
 		INFO,
 		WARNING,
