@@ -1,0 +1,22 @@
+#include "Fixed.hpp"
+
+int	main( void )
+{
+	Fixed		a;
+	Fixed const	b( Fixed( 5.05f ) * Fixed( 2) );
+	//Fixed const	b(10);
+	std::cout << a << std::endl;
+
+	std::cout << b << std::endl;
+
+	//std::cout << Fixed::max( a, b ) << std::endl;
+
+	a = 5;
+	std::cout << a << std::endl;
+	a = a * b;
+	std::cout << a << std::endl;
+	a = 20.7f;
+	a = a / b;
+	std::cout << a << std::endl;
+	return 0;
+}
