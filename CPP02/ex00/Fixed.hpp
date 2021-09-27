@@ -11,7 +11,7 @@ class Fixed
 public:
 	Fixed();
 	Fixed(const Fixed& name); //copy constructor
-	Fixed& operator=(const Fixed&); //assignation operator
+	Fixed& operator=(const Fixed& other); //assignation operator
 	~Fixed();
 
 	int getRawBits( void ) const;

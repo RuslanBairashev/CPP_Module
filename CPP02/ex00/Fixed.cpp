@@ -14,13 +14,15 @@ Fixed::~Fixed()
 Fixed::Fixed(const Fixed& name)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	_raw = name.getRawBits();
+	*this = name;
 }
 
-Fixed& Fixed::operator=(const Fixed&)
+Fixed& Fixed::operator=(const Fixed& other)
 {
 	std::cout << "Assignation operator called" << std::endl;
-	this->getRawBits();
+	if (this == &other)
+		return *this;
+	this->_raw = other.getRawBits();
 	return *this;
 }
 
