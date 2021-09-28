@@ -2,7 +2,7 @@
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	_energy_points = 100;
+	_energy_points = 101;
 	_attack_damage = 30;
 	std::cout << "FragTrap Default constructor called" << std::endl;
 }

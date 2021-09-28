@@ -3,7 +3,9 @@
 DiamondTrap::DiamondTrap(std::string name) : \
 ClapTrap(name), ScavTrap(name), FragTrap(name)
 {
+	
 	_hitpoints = FragTrap::_hitpoints;
+	//_energy_points = 700;
 	_energy_points = ScavTrap::_energy_points;
 	_attack_damage = FragTrap::_attack_damage;
 	std::cout << "DiamondTrap Default constructor called" << std::endl;
