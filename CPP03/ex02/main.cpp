@@ -8,8 +8,8 @@ int	main()
 
 	std::cout << std::endl;
 	one.attack("Zombie");
-	one.ClapTrap::takeDamage(7);
-	one.ClapTrap::beRepaired(5);
+	one.takeDamage(7);
+	one.beRepaired(5);
 	one.highFivesGuys();
 	std::cout << std::endl;
 	
