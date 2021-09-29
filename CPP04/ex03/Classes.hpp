@@ -1,33 +1,43 @@
-#ifndef AMATERIA_HPP
-#define AMATERIA_HPP
+#ifndef CLASSES_HPP
+#define CLASSES_HPP
 
 #include <iostream>
 #include "Amateria.hpp"
 
-class	Character
+class	Character: ICharacter
 {
 private:
 	std::string	_name;
 public:
 	Character(/* args */);
-	~Character();
+	virtual ~Character();
 };
 
-class	Ice
+class	Ice: public AMateria
 {
 private:
 	std::string	_name;
 public:
 	Ice(/* args */);
-	~Ice();
+	virtual ~Ice();
 };
 
-class	Cure
+class	Cure: public AMateria
 {
 private:
 	std::string	_name;
 public:
 	Cure(/* args */);
-	~Cure();
+	virtual ~Cure();
 };
+
+class	MateriaSource: IMateriaSource
+{
+private:
+	std::string	_name;
+public:
+	MateriaSource(/* args */);
+	virtual ~MateriaSource();
+};
+
 #endif
