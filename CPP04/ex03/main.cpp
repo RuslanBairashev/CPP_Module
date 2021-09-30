@@ -1,15 +1,22 @@
-#include "Amateria.hpp"
-#include "Classes.hpp"
+#include "Materia.hpp"
+#include "Character.hpp"
+#include "Source.hpp"
 
 int	main()
 {
+	Ice	tmp;
+	std::cout << tmp.getType() << std::endl;
+	tmp.use();
+
+	ICharacter* me = new Character("me");
+	std::cout << me->getName() << std::endl;
 
 	
 	//IMateriaSource* src = new MateriaSource();
 	//src->learnMateria(new Ice());
 	//src->learnMateria(new Cure());
 
-	ICharacter* me = new Character("me");
+	//ICharacter* me = new Character("me");
 /*
 	AMateria* tmp;
 	tmp = src->createMateria("ice");
