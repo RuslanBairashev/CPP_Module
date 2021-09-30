@@ -33,7 +33,7 @@ AMateria&	AMateria::operator=(const AMateria& c_name)
 
 std::string const & AMateria::getType() const { return type; }
 
-void AMateria::use()
+void AMateria::use(ICharacter& target)
 {
 	std::cout << this->getType() << " use method called\n";
 }
@@ -50,4 +50,9 @@ AMateria* Ice::clone() const
 	//AMateria* clone = &tmp;
 	AMateria* clone = NULL;
 	return clone;
+}
+
+void Ice::use(ICharacter& target)
+{
+	std::cout << "* shoots an ice bolt at ";
 }

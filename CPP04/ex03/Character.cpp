@@ -55,5 +55,8 @@ void Character::unequip(int idx)
 void Character::use(int idx, ICharacter& target)
 {
 	if (!(_inventory[idx].empty()))
-		std::cout << "use on " << idx << target.getName() << " to \n"; 
+	{
+		Ice::use;
+		std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+	}
 }

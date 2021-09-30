@@ -2,7 +2,7 @@
 #define MATERIA_HPP
 
 #include <iostream>
-//#include "Character.hpp"
+#include "Character.hpp"
 
 class AMateria
 {
@@ -17,8 +17,8 @@ public:
 
 	std::string const & getType() const; //Returns the materia type
 	virtual AMateria* clone() const = 0;
-	virtual void use();
-	//virtual void use(ICharacter& target);
+	//virtual void use();
+	virtual void use(ICharacter& target);
 };
 
 class	Ice: public AMateria
@@ -29,7 +29,7 @@ public:
 	Ice();
 	//virtual ~Ice();
 	virtual AMateria* clone() const;
-	//virtual void use(ICharacter& target);
+	virtual void use(ICharacter& target);
 };
 
 class	Cure: public AMateria

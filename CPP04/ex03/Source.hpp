@@ -8,17 +8,18 @@ class IMateriaSource //const
 {
 	public:
 	virtual ~IMateriaSource() {}
-	virtual void learnMateria(AMateria*) = 0;
+	virtual void learnMateria(AMateria* m) = 0;
 	virtual AMateria* createMateria(std::string const & type) = 0;
 };
 
 class	MateriaSource: public IMateriaSource
 {
 private:
-	std::string	_name;
-	std::string	_inventory[4];
+	//std::string	_name;
+	//std::string	_inventory[4];
 public:
-	MateriaSource(std::string name);
+	std::string	_inventory[4];
+	MateriaSource();
 	virtual ~MateriaSource();
 	MateriaSource(const MateriaSource& c_name);
 	MateriaSource& operator=(const MateriaSource& c_name);
