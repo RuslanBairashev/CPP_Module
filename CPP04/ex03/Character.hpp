@@ -1,8 +1,9 @@
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
 
-#include <iostream>
-#include "Materia.hpp"
+//#include <iostream>
+//#include "Materia.hpp"
+#include "Headers.hpp"
 
 class ICharacter //const
 {

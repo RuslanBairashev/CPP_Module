@@ -1,8 +1,9 @@
 #ifndef MATERIA_HPP
 #define MATERIA_HPP
 
-#include <iostream>
-#include "Character.hpp"
+//#include <iostream>
+//#include "Character.hpp"
+#include "Headers.hpp"
 
 class AMateria
 {

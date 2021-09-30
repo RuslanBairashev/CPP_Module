@@ -1,8 +1,9 @@
 #ifndef SOURCE_HPP
 #define SOURCE_HPP
 
-#include <iostream>
-#include "Materia.hpp"
+////#include <iostream>
+//#include "Materia.hpp"
+#include "Headers.hpp"
 
 class IMateriaSource //const
 {
