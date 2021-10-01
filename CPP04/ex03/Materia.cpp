@@ -2,29 +2,16 @@
 
 AMateria::AMateria()
 {
-	std::cout << "AMateria class constructor called" << std::endl;
-}
-/*
-AMateria::AMateria(std::string const & type)
-{
-	this->type = type;
-	std::cout << "AMateria class constructor called" << std::endl;
-}
-*/
-AMateria::~AMateria()
-{
-	std::cout << "AMateria class destructor called" << std::endl;
+	this->type = "";
 }
 
 AMateria::AMateria(const AMateria& c_name)
 {
 	type = c_name.type;
-	std::cout << "AMateria class copy constructor called" << std::endl;
 }
 
 AMateria&	AMateria::operator=(const AMateria& c_name)
 {
-	std::cout << "AMateria class \"=\" assignation called" << std::endl;
 	if (this == &c_name)
 		return *this;
 	type = c_name.type;
@@ -35,25 +22,62 @@ std::string const & AMateria::getType() const { return type; }
 
 void AMateria::use(ICharacter& target)
 {
-	std::cout << this->getType() << target.getName() << " use method called\n";
+	std::cout  << target.getName() << " use method called" << std::endl;
 }
 
 Ice::Ice() : AMateria()
 {
 	this->type = "ice";
-	std::cout << "AMateria class constructor called" << std::endl;
+}
+
+Ice::Ice(const Ice& c_name)
+{
+	type = c_name.type;
+}
+
+Ice&	Ice::operator=(const Ice& c_name)
+{
+	if (this == &c_name)
+		return *this;
+	type = c_name.type;
+	return *this;
 }
 
 AMateria* Ice::clone() const
 {
-	//Ice	tmp;
-	//AMateria* clone = &tmp;
-	AMateria* clone = NULL;
-	return clone;
+	return new Ice();
 }
 
 void Ice::use(ICharacter& target)
 {
-	std::cout << target.getName() << "* shoots an ice bolt at ";
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+}
+
+Cure::Cure() : AMateria()
+{
+	this->type = "cure";
+}
+
+Cure::Cure(const Cure& c_name)
+{
+	type = c_name.type;
+}
+
+Cure&	Cure::operator=(const Cure& c_name)
+{
+	if (this == &c_name)
+		return *this;
+	type = c_name.type;
+	return *this;
+}
+
+AMateria* Cure::clone() const
+{
+	return new Cure();
+}
+
+void Cure::use(ICharacter& target)
+{
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 	
 }

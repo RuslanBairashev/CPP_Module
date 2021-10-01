@@ -1,8 +1,6 @@
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
 
-//#include <iostream>
-//#include "Materia.hpp"
 #include "Headers.hpp"
 
 class AMateria;
@@ -21,10 +19,10 @@ class	Character: public ICharacter
 {
 private:
 	std::string	_name;
-	std::string	_inventory[4];
+	AMateria*	_inventory[4];
 public:
 	Character(std::string name);
-	virtual ~Character();
+	virtual ~Character() {}
 	Character(const Character& c_name);
 	Character& operator=(const Character& c_name);
 

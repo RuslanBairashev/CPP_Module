@@ -1,8 +1,6 @@
 #ifndef SOURCE_HPP
 #define SOURCE_HPP
 
-////#include <iostream>
-//#include "Materia.hpp"
 #include "Headers.hpp"
 
 class AMateria;
@@ -18,12 +16,10 @@ class IMateriaSource //const
 class	MateriaSource: public IMateriaSource
 {
 private:
-	//std::string	_name;
-	//std::string	_inventory[4];
+	AMateria*	_inventory[4];
 public:
-	std::string	_inventory[4];
 	MateriaSource();
-	virtual ~MateriaSource();
+	virtual ~MateriaSource() {}
 	MateriaSource(const MateriaSource& c_name);
 	MateriaSource& operator=(const MateriaSource& c_name);
 
