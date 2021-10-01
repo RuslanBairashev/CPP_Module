@@ -1,14 +1,9 @@
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap(std::string name) : \
-ClapTrap(name), ScavTrap(name), FragTrap(name)
+ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name)
 {
-	
-	_hitpoints = FragTrap::_hitpoints;
-	//_energy_points = 700;
-	//std::cout << "*********" << ScavTrap::_energy_points << std::endl;
-	_energy_points = ScavTrap::_energy_points;
-	_attack_damage = FragTrap::_attack_damage;
+	_name = name;
 	std::cout << "DiamondTrap Default constructor called" << std::endl;
 }
 
@@ -18,7 +13,7 @@ DiamondTrap::~DiamondTrap()
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& c_name) : \
-ClapTrap(c_name), ScavTrap(c_name), FragTrap(c_name) 
+ClapTrap(c_name), FragTrap(c_name), ScavTrap(c_name)
 {
 	this->_name = c_name._name;
 }
@@ -31,14 +26,7 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap& other)
 	return *this;
 }
 
-void	DiamondTrap::attack(std::string const & target)
+void	DiamondTrap::whoAmI()
 {
-	std::cout << "DiamondTrap " << this->_name << " attack " << target;
-	std::cout << ", causing " << this->_attack_damage << " points of damage!";
-	std::cout << std::endl;
-}
-
-void	DiamondTrap::highFivesGuys()
-{
-	std::cout << "Display positive high five request." << std::endl;
+	std::cout << "Private name is " << _name << " . Protected name is " << ClapTrap::_name << std::endl;
 }

@@ -6,12 +6,12 @@ ClapTrap::ClapTrap(std::string name)
 	_energy_points = 50;
 	_attack_damage = 20;
 	_name = name;
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ClapTrap constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap destructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& c_name)

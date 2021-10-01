@@ -5,17 +5,16 @@
 
 int	main()
 {
+	std::cout << "_______Construction__________________" << std::endl;
 	DiamondTrap one("Vasya");
 
-	std::cout << "Name=" << one.getName() << std::endl;
+	std::cout << "_______Attributes____________________" << std::endl;
 	std::cout << "HP=" << one.getHP() << " (Must be 100)" << std::endl;
 	std::cout << "EP=" << one.getEP() << " (Must be 50)" << std::endl;
 	std::cout << "AD=" << one.getAD() << " (Must be 30)" << std::endl;
-	std::cout << "______________________________" << std::endl;
-	one.FragTrap::beRepaired(5);
-	one.ScavTrap::beRepaired(5);
+	one.whoAmI();
 
-	std::cout << std::endl;
+	std::cout << "_______Functions_____________________" << std::endl;
 	one.attack("Zombie");
 	one.takeDamage(7);
 	one.beRepaired(5);
@@ -23,6 +22,6 @@ int	main()
 	one.highFivesGuys();
 	std::cout << std::endl;
 
-	
+	std::cout << "_______Destruction___________________" << std::endl;
 	return 0;
 }
