@@ -26,10 +26,10 @@ int	main()
 	//me->equip(tmp);
 
 	ICharacter* bob = new Character("bob");
-
+	std::cout << "_________________________________" << std::endl;
 	me->use(0, *bob);
 	//me->use(1, *bob);
-
+	std::cout << "_________________________________" << std::endl;
 	delete bob;
 	delete me;
 	delete src;

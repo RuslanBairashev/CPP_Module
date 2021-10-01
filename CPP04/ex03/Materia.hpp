@@ -5,6 +5,8 @@
 //#include "Character.hpp"
 #include "Headers.hpp"
 
+class ICharacter;
+
 class AMateria
 {
 protected:

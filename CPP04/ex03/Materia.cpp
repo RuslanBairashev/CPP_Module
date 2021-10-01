@@ -35,7 +35,7 @@ std::string const & AMateria::getType() const { return type; }
 
 void AMateria::use(ICharacter& target)
 {
-	std::cout << this->getType() << " use method called\n";
+	std::cout << this->getType() << target.getName() << " use method called\n";
 }
 
 Ice::Ice() : AMateria()
@@ -54,5 +54,6 @@ AMateria* Ice::clone() const
 
 void Ice::use(ICharacter& target)
 {
-	std::cout << "* shoots an ice bolt at ";
+	std::cout << target.getName() << "* shoots an ice bolt at ";
+	
 }

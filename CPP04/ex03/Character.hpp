@@ -5,6 +5,8 @@
 //#include "Materia.hpp"
 #include "Headers.hpp"
 
+class AMateria;
+
 class ICharacter //const
 {
 public:

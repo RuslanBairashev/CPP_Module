@@ -56,7 +56,7 @@ void Character::use(int idx, ICharacter& target)
 {
 	if (!(_inventory[idx].empty()))
 	{
-		Ice::use;
+		//Ice::use;
 		std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 	}
 }
