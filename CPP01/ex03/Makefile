@@ -1,4 +1,4 @@
-# Makefile for CCP01/ex02
+# Makefile for CCP01/ex03
 
 NAME = weapon
 CC = clang++

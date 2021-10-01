@@ -35,7 +35,7 @@ void MateriaSource::learnMateria(AMateria* m)
 
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
-	AMateria*	ret = 0;
+	AMateria*	ret = nullptr;
 	for(int i = 0; i < 4; i++)
 	{
 		if (type == "ice")
