@@ -1,11 +1,14 @@
 #include "Weapon.hpp"
 #include "HumanB.hpp"
 
-HumanB::HumanB (std::string str) : _name(str) {}
-
-void	HumanB::setWeapon(Weapon type)
+HumanB::HumanB (std::string str) : _name(str)
 {
-	_typeW = &type;
+	_typeW = NULL;
+}
+
+void	HumanB::setWeapon(Weapon* c_name)
+{
+	_typeW = c_name;
 }
 
 void	HumanB::attack ()

@@ -3,11 +3,11 @@
 
 #include "Weapon.hpp"
 
-class HumanB
+class HumanB //pointer
 {
 public:
 	HumanB(std::string str);
-	void	setWeapon(Weapon type);
+	void	setWeapon(Weapon *c_name);
 	Weapon*		_typeW;
 	void	attack();
 
