@@ -6,9 +6,9 @@ HumanB::HumanB (std::string str) : _name(str)
 	_typeW = NULL;
 }
 
-void	HumanB::setWeapon(Weapon* c_name)
+void	HumanB::setWeapon(Weapon& c_name)
 {
-	_typeW = c_name;
+	_typeW = &c_name;
 }
 
 void	HumanB::attack ()

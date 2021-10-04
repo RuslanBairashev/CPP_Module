@@ -8,7 +8,6 @@ class HumanA //reference
 public:
 	HumanA(std::string str, Weapon& type);
 	void	attack();
-	//Weapon&		_typeW;
 
 private:
 	std::string	_name;

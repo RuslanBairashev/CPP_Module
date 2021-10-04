@@ -7,13 +7,12 @@ class HumanB //pointer
 {
 public:
 	HumanB(std::string str);
-	void	setWeapon(Weapon *c_name);
-	Weapon*		_typeW;
+	void	setWeapon(Weapon &c_name);
 	void	attack();
 
 private:
 	std::string	_name;
-	
+	Weapon*		_typeW;
 };
 
 #endif
