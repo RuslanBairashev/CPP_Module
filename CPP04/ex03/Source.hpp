@@ -27,7 +27,7 @@ public:
 				delete _inventory[i];
 		}
 	}
-
+	//virtual ~MateriaSource() {}
 	MateriaSource(const MateriaSource& c_name);
 	MateriaSource& operator=(const MateriaSource& c_name);
 
