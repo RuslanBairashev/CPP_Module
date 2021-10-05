@@ -1,5 +1,15 @@
 #include "Bureaucrat.hpp"
 
+const char* Bureaucrat::TooHigh::what() const throw()
+{
+	return "Bureaucrat::GradeTooHighException";
+}
+
+const char* Bureaucrat::TooLow::what() const throw()
+{
+	return "Bureaucrat::GradeTooLowException";
+}
+
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
 	try
@@ -7,60 +17,62 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 		_grade = grade;
 		if (grade < 1)
 			throw Bureaucrat::TooHigh();
-			//_grade = 1;
 		else if (grade > 150)
-			throw Bureaucrat::TooHigh();
-			//_grade = 150;
+			throw Bureaucrat::TooLow();
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
+}
+
+Bureaucrat::Bureaucrat(const Bureaucrat& c_name)
+{
+	*this = c_name;
+}
+
+Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& c_name)
+{
+	if (this == &c_name)
+		return *this;
+	this->_grade = c_name._grade;
+	return *this;
 }
 
 std::string	Bureaucrat::getName() const { return _name; }
 
 int			Bureaucrat::getGrade() const {return _grade; }
 
-Bureaucrat&	Bureaucrat::operator++()
+void	Bureaucrat::incGrade(Bureaucrat& c_name)
 {
-	//if (_grade <= 1)
-	//	throw CustomExcept("Error2");
-	/*
 	try
 	{
-		_grade--;
+		c_name._grade--;
 		if (_grade < 1)
-			throw CustomExcept("Error2");
+			throw Bureaucrat::TooHigh();
+		else if (_grade > 150)
+			throw Bureaucrat::TooLow();
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	
-	//_grade--;*/
-	_grade--;
-	return *this;
 }
 
-Bureaucrat	Bureaucrat::operator++(int)
+void	Bureaucrat::decGrade(Bureaucrat& c_name)
 {
-	Bureaucrat	temp = *this;
-	++*this;
-	return temp;
-}
-
-Bureaucrat&	Bureaucrat::operator--()
-{
-	_grade++;
-	return *this;
-}
-
-Bureaucrat	Bureaucrat::operator--(int)
-{
-	Bureaucrat	temp = *this;
-	++*this;
-	return temp;
+	try
+	{
+		c_name._grade++;
+		if (_grade < 1)
+			throw Bureaucrat::TooHigh();
+		else if (_grade > 150)
+			throw Bureaucrat::TooLow();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& c_name)
