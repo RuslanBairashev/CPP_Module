@@ -83,7 +83,25 @@ void		Bureaucrat::signForm(Form& c_name)
 		std::cout << " because ";
 		throw Form::TooLow();
 	}
+	
 	std::cout << this->getName() << " signs " << c_name.getName() << std::endl;
+}
+
+void		Bureaucrat::executeForm(Form const & c_name) const
+{
+	if ( !c_name.getStatus())
+	{
+		std::cout << "*** "<< this->getName() << " cannot execute ";
+		std::cout << c_name.getName() << ". Form not signed." << std::endl;
+	}
+	else if ( this->getGrade() > c_name.getExecGrade())
+	{
+		std::cout << "*** "<< this->getName() << " cannot execute ";
+		std::cout << c_name.getName() << ". Grade too small." << std::endl;
+	}
+	else
+		std::cout << "*** " << this->getName() << " executes " \
+		<< c_name.getName() << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& c_name)
