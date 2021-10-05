@@ -71,12 +71,12 @@ void	Form::beSigned(Bureaucrat& c_name)
 	try
 	{
 		c_name.signForm(*this);
+		this->_isSigned = true;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	this->_isSigned = true; //подписывает в любом случае
 }
 
 std::ostream& operator<<(std::ostream& os, const Form& c_name)

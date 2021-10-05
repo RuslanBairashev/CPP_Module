@@ -3,7 +3,8 @@
 NAME = bure
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SOURCES = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp
+SOURCES = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp \
+RobotomyCreationForm.cpp PresidentalPardonForm.cpp
 OBJECTS = $(SOURCES:.cpp=.obj)
 
 all: $(NAME)

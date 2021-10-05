@@ -48,11 +48,10 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 			if (executor.getGrade() > this->getExecGrade())
 				throw Form::TooLow();
 		}
+		this->action();
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	this->action();
-	//executor.executeForm(this);
 }
