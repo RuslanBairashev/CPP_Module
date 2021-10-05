@@ -3,11 +3,13 @@
 
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form
 {
 public:
-	Form() : _formName(""), _signGrade(150), _execGrade(150) {}
-	Form(std::string name) : _formName(name), _signGrade(150), _execGrade(150) {}
+	Form() : _formName(""), _isSigned(false), _signGrade(150), _execGrade(150) {}
+	Form(std::string name) : _formName(name), _isSigned(false) ,_signGrade(150), _execGrade(150) {}
 	Form(std::string name, int sign_grade, int exec_grade);
 	~Form() {}
 	Form(const Form& c_name);
@@ -18,7 +20,7 @@ public:
 	int			getSignGrade() const;
 	int			getExecGrade() const;
 
-	void	Form::beSigned(Bureaucrat& c_name);
+	void	beSigned(Bureaucrat& c_name);
 
 	class TooHigh: public std::exception
 	{

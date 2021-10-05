@@ -74,7 +74,7 @@ void	Bureaucrat::decGrade(Bureaucrat& c_name)
 		std::cerr << e.what() << '\n';
 	}
 }
-
+/*
 void		Bureaucrat::signForm(Form& c_name)
 {
 	if (this->_grade > c_name.getSignGrade())
@@ -82,6 +82,20 @@ void		Bureaucrat::signForm(Form& c_name)
 		std::cout << this->getName() << " cannot sign " << c_name.getName();
 		std::cout << " because " << std::endl;
 	}
+	else
+		std::cout << this->getName() << " signs " << c_name.getName() << std::endl;
+}
+*/
+
+void		Bureaucrat::signForm(Form& c_name)
+{
+	if (this->getGrade() > c_name.getSignGrade())
+	{
+		std::cout << this->getName() << " cannot sign " << c_name.getName();
+		std::cout << " because ";
+		throw Form::TooLow();
+	}
+	std::cout << this->getName() << " signs " << c_name.getName() << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& c_name)

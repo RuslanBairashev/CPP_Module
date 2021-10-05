@@ -11,7 +11,7 @@ const char* Form::TooLow::what() const throw()
 }
 
 Form::Form(std::string name, int sign_grade, int exec_grade) \
-: _formName(name), _signGrade(150), _execGrade(150)
+: _formName(name), _isSigned(false), _signGrade(sign_grade), _execGrade(exec_grade)
 {
 	try
 	{
@@ -26,7 +26,8 @@ Form::Form(std::string name, int sign_grade, int exec_grade) \
 	}
 }
 
-Form::Form(const Form& c_name)
+Form::Form(const Form& c_name)\
+: _formName(c_name._formName), _signGrade(c_name._signGrade), _execGrade(c_name._execGrade)
 {
 	*this = c_name;
 }
@@ -43,7 +44,7 @@ std::string	Form::getName() const { return _formName; }
 bool		Form::getStatus() const { return _isSigned; }
 int			Form::getSignGrade() const {return _signGrade; }
 int			Form::getExecGrade() const {return _execGrade; }
-
+/*
 void	Form::beSigned(Bureaucrat& c_name)
 {
 	try
@@ -58,9 +59,26 @@ void	Form::beSigned(Bureaucrat& c_name)
 	this->_isSigned = true;
 	c_name.signForm(*this);
 }
+*/
 
-std::ostream& operator<<(std::ostream& os, const Bureaucrat& c_name)
+void	Form::beSigned(Bureaucrat& c_name)
 {
-	os << c_name.getName() << ", bureaucrat grade " << c_name.getGrade();
+	try
+	{
+		c_name.signForm(*this);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	this->_isSigned = true;
+}
+
+std::ostream& operator<<(std::ostream& os, const Form& c_name)
+{
+	std::cout << std::boolalpha;
+	os << "Form " << c_name.getName() << " signed status: " << c_name.getStatus();
+	os << ".\nParameters: signGrade: " << c_name.getSignGrade();
+	os << ", execGrade: " << c_name.getExecGrade() << std::endl;
 	return os;
 }
