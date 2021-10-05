@@ -1,15 +1,7 @@
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) \
-: Form("ShrubberyCreationForm", 145, 137), _target(target)
-{
-	//_target = target;
-	//target += "_shrubbery";
-	//std::ofstream outfile;
-	//outfile.open(target.c_str(), std::ios::app);
-	//outfile << "ASCII" << std::endl;
-	//outfile.close();
-}
+: Form("ShrubberyCreationForm", 145, 137), _target(target) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& c_name)\
 : Form(c_name.getName(), c_name.getSignGrade(), c_name.getExecGrade())
@@ -21,7 +13,6 @@ ShrubberyCreationForm&	ShrubberyCreationForm::operator=(const ShrubberyCreationF
 {
 	if (this == &c_name)
 		return *this;
-	//this->_target = c_name._target;
 	return *this;
 }
 
@@ -32,9 +23,24 @@ void	ShrubberyCreationForm::action() const
 	filename = _target + "_shrubbery";
 	std::ofstream outfile;
 	outfile.open(filename.c_str(), std::ios::app);
-	outfile << "ASCII" << std::endl;
+	outfile << "         v "<< std::endl;
+	outfile << "        >X< "<< std::endl;
+	outfile << "         A "<< std::endl;
+	outfile << "        d$b "<< std::endl;
+	outfile << "      .d\\$$b. "<< std::endl;
+	outfile << "    .d$i$$\\$$b. "<< std::endl;
+	outfile << "       d$$@b "<< std::endl;
+	outfile << "      d\\$$$ib "<< std::endl;
+	outfile << "    .d$$$\\$$$b "<< std::endl;
+	outfile << "  .d$$@$$$$\\$$ib. "<< std::endl;
+	outfile << "      d$$i$$b "<< std::endl;
+	outfile << "     d\\$$$$@$b "<< std::endl;
+	outfile << "  .d$@$$\\$$$$$@b. "<< std::endl;
+	outfile << ".d$$$$i$$$\\$$$$$$b. "<< std::endl;
+	outfile << "		### "<< std::endl;
+	outfile << "		### "<< std::endl;
+	outfile << "		### "<< std::endl;
 	outfile.close();
-	//std::cout << "file created\n";
 }
 
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
