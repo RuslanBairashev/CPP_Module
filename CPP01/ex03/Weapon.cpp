@@ -2,6 +2,5 @@
 
 Weapon::Weapon (std::string str)
 {
-	Weapon::setType(str);
-//	_type = nullptr;
+	this->setType(str);
 }
