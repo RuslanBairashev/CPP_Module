@@ -1,13 +1,13 @@
 #include "Zombie.hpp"
 
-Zombie::Zombie()
+Zombie::Zombie() : m_name("")
 {
-	std::cout << "Constructed\n";
+	std::cout << this->m_name << " constructed\n";
 }
 
 Zombie::Zombie(std::string str) : m_name(str)
 {
-	std::cout << "Constructed\n";
+	std::cout << this->m_name << " constructed\n";
 }
 
 Zombie::~Zombie()
@@ -17,5 +17,5 @@ Zombie::~Zombie()
 
 void	Zombie::announce(void)
 {
-	std::cout << " BraiiiiiiinnnzzzZ...\n";
+	std::cout << this->m_name << " BraiiiiiiinnnzzzZ...\n";
 }
