@@ -28,7 +28,7 @@ permissions! Can't open ", av[1]));
 		
 		std::string		str;
 		std::string		str_new;
-		ifs.seekg(0, std::ios::end);   
+		ifs.seekg(0, std::ios::end);
 		str.reserve(ifs.tellg());
 		ifs.seekg(0, std::ios::beg);
 		str.assign((std::istreambuf_iterator<char>(ifs)),
