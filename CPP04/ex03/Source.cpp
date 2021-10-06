@@ -6,6 +6,15 @@ MateriaSource::MateriaSource()
 		_inventory[i] = nullptr;
 }
 
+MateriaSource::~MateriaSource()
+{
+	for(int i = 0; i < 4; i++)
+	{
+		if(_inventory[i])
+			delete _inventory[i];
+	}
+}
+
 MateriaSource::MateriaSource(const MateriaSource& c_name)
 {
 	for(short ii = 0; ii < 4; ii++)

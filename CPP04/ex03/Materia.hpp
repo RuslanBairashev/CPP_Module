@@ -1,10 +1,10 @@
 #ifndef MATERIA_HPP
 #define MATERIA_HPP
 
-#include "Headers.hpp"
-
-class ICharacter;
-
+//class ICharacter;
+#include "ICharacter.hpp"
+#include "AMateria.hpp"
+/*
 class AMateria
 {
 protected:
@@ -19,7 +19,7 @@ public:
 	virtual AMateria* clone() const = 0;
 	virtual void use(ICharacter& target);
 };
-
+*/
 class	Ice: public AMateria
 {
 private:

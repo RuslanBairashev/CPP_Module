@@ -1,10 +1,10 @@
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
 
-#include "Headers.hpp"
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-class AMateria;
-
+/*
 class ICharacter //const
 {
 public:
@@ -14,7 +14,7 @@ public:
 	virtual void unequip(int idx) = 0;
 	virtual void use(int idx, ICharacter& target) = 0;
 };
-
+*/
 class	Character: public ICharacter
 {
 private:
@@ -22,7 +22,7 @@ private:
 	AMateria*	_inventory[4];
 public:
 	Character(std::string name);
-	virtual ~Character() {}
+	virtual ~Character();
 	Character(const Character& c_name);
 	Character& operator=(const Character& c_name);
 

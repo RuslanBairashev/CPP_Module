@@ -7,6 +7,15 @@ Character::Character(std::string name)
 		_inventory[i] = nullptr;
 }
 
+Character:: ~Character()
+{
+	for(int i = 0; i < 4; i++)
+	{
+		if(_inventory[i])
+			delete _inventory[i];
+	}
+}
+
 Character::Character(const Character& c_name)
 {
 	_name = c_name._name;
