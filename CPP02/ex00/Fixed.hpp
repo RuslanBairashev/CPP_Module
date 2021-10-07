@@ -2,9 +2,6 @@
 #define FIXED_HPP
 
 #include <iostream>
-#include <cctype>
-#include <cstring>
-#include <cstdlib>
 
 class Fixed
 {
@@ -14,11 +11,11 @@ public:
 	Fixed& operator=(const Fixed& other); //assignation operator
 	~Fixed();
 
-	int getRawBits( void ) const;
-	void setRawBits( int const raw );
+	int		getRawBits( void ) const;
+	void	setRawBits( int const raw );
 
 private:
-	int	_raw;
+	int					_raw;
 	static const int	frc = 8;
 };
 
