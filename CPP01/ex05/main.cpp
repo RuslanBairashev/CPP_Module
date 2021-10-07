@@ -4,10 +4,9 @@ int	main()
 {
 	Karen	my_girl;
 
-	my_girl.initialize();
-	my_girl.complain("DEBUG");
-	my_girl.complain("INFO");
-	my_girl.complain("WARNING");
-	my_girl.complain("ERROR");
+	my_girl.complain("debug");
+	my_girl.complain("info");
+	my_girl.complain("warning");
+	my_girl.complain("error");
 	return (0);
 }

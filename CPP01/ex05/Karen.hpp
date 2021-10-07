@@ -10,7 +10,6 @@ class Karen
 {
 public:
 	void	complain( std::string level );
-	void	initialize();
 
 private:
 	void	debug( void );
