@@ -4,11 +4,12 @@ NAME = claptrap
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow
 SOURCES = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
+HEADERS = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 OBJECTS = $(SOURCES:.cpp=.obj)
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
+$(NAME): $(OBJECTS) $(HEADERS)
 	$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
 
 %.obj: %.cpp

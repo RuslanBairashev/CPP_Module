@@ -1,10 +1,10 @@
-# Makefile for CCP03/ex01
+# Makefile for CCP06/ex00
 
-NAME = claptrap
+NAME = fixed
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SOURCES = main.cpp ClapTrap.cpp ScavTrap.cpp
-HEADERS = ClapTrap.hpp ScavTrap.hpp
+SOURCES = main.cpp
+HEADERS = 
 OBJECTS = $(SOURCES:.cpp=.obj)
 
 all: $(NAME)
