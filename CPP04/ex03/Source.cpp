@@ -3,7 +3,8 @@
 MateriaSource::MateriaSource()
 {
 	for(int i = 0; i < 4; i++)
-		_inventory[i] = nullptr;
+		_inventory[i] = NULL;
+	std::cout << "1_MateriaSource class constructor called" << std::endl;
 }
 
 MateriaSource::~MateriaSource()
@@ -13,6 +14,7 @@ MateriaSource::~MateriaSource()
 		if(_inventory[i])
 			delete _inventory[i];
 	}
+	std::cout << "1_MateriaSource class destructor called" << std::endl;
 }
 
 MateriaSource::MateriaSource(const MateriaSource& c_name)
@@ -44,7 +46,7 @@ void MateriaSource::learnMateria(AMateria* m)
 
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
-	AMateria*	ret = nullptr;
+	AMateria*	ret = NULL;
 	for(int i = 0; i < 4; i++)
 	{
 		if (type == "ice")

@@ -1,32 +1,16 @@
 #ifndef MATERIA_HPP
 #define MATERIA_HPP
 
-//class ICharacter;
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
-/*
-class AMateria
-{
-protected:
-	std::string	type;
-public:
-	AMateria();
-	virtual ~AMateria() {}
-	AMateria(const AMateria& c_name);
-	AMateria&	operator=(const AMateria& c_name);
 
-	std::string const & getType() const; //Returns the materia type
-	virtual AMateria* clone() const = 0;
-	virtual void use(ICharacter& target);
-};
-*/
 class	Ice: public AMateria
 {
 private:
 	std::string	_name;
 public:
 	Ice();
-	virtual ~Ice() {}
+	virtual ~Ice();
 	Ice(const Ice& c_name);
 	Ice&	operator=(const Ice& c_name);
 
@@ -40,7 +24,7 @@ private:
 	std::string	_name;
 public:
 	Cure();
-	virtual ~Cure() {}
+	virtual ~Cure();
 	Cure(const Cure& c_name);
 	Cure&	operator=(const Cure& c_name);
 

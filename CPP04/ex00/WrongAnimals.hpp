@@ -11,11 +11,11 @@ protected:
 
 public:
 	WrongAnimal();
-	~WrongAnimal();
+	virtual	~WrongAnimal();
 	WrongAnimal(const WrongAnimal& c_name);
 	WrongAnimal&	operator=(const WrongAnimal& c_name);
 
-	void	makeSound() const;
+	void		makeSound() const;
 	std::string	getType() const;
 };
 
@@ -24,7 +24,9 @@ class	WrongCat : public WrongAnimal
 {
 public:
 	WrongCat();
-	~WrongCat();
+	virtual ~WrongCat();
+	WrongCat(const WrongCat& c_name);
+	WrongCat&	operator=(const WrongCat& c_name);
 
 	void	makeSound() const;
 };
@@ -34,7 +36,9 @@ class	WrongDog : public WrongAnimal
 {
 public:
 	WrongDog();
-	~WrongDog();
+	virtual ~WrongDog();
+	WrongDog(const WrongDog& c_name);
+	WrongDog&	operator=(const WrongDog& c_name);
 
 	void	makeSound() const;
 };

@@ -17,9 +17,10 @@ int	main()
 	meta->makeSound();
 	std::cout << std::endl << std::endl;
 
-	const WrongAnimal* wmeta = new WrongAnimal();
-	const WrongAnimal* wi = new WrongCat();
-	const WrongAnimal* wj = new WrongDog();
+	const WrongAnimal*	wmeta = new WrongAnimal();
+	const WrongAnimal*	wi = new WrongCat();
+	const WrongAnimal*	wj = new WrongDog();
+	const WrongCat*		kitten = new WrongCat();
 
 	std::cout << std::endl << "WrongAnimal class tests: " << std::endl;
 	std::cout << wi->getType() << " says ";
@@ -30,7 +31,11 @@ int	main()
 	std::cout << std::endl;
 	wmeta->makeSound();
 	std::cout << std::endl << std::endl;
+	std::cout << kitten->getType() << " kitten says ";
+	kitten->makeSound();
+	std::cout << std::endl << std::endl;
 
+	delete kitten;
 	delete meta;
 	delete i;
 	delete j;

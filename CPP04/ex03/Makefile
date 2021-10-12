@@ -2,13 +2,14 @@
 
 NAME = interface
 CC = clang++
-CFLAGS = #-Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 SOURCES = main.cpp Materia.cpp Character.cpp Source.cpp
+HEADERS = Materia.hpp Character.hpp Source.hpp AMateria.hpp ICharacter.hpp ISource.hpp
 OBJECTS = $(SOURCES:.cpp=.obj)
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
+$(NAME): $(OBJECTS) $(HEADERS)
 	$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
 
 %.obj: %.cpp

@@ -44,6 +44,19 @@ Cat::~Cat()
 	std::cout << "Cat class destructor called" << std::endl;
 }
 
+Cat::Cat(const Cat& c_name)
+{
+	*this = c_name;
+}
+
+Cat&	Cat::operator=(const Cat& c_name)
+{
+	if (this == &c_name)
+		return *this;
+	this->type = c_name.type;
+	return *this;
+}
+
 void	Cat::makeSound() const
 {
 	std::cout << "\"Meow!\"";
@@ -59,6 +72,19 @@ Dog::Dog() : Animal()
 Dog::~Dog()
 {
 	std::cout << "Dog class destructor called" << std::endl;
+}
+
+Dog::Dog(const Dog& c_name)
+{
+	*this = c_name;
+}
+
+Dog&	Dog::operator=(const Dog& c_name)
+{
+	if (this == &c_name)
+		return *this;
+	this->type = c_name.type;
+	return *this;
 }
 
 void	Dog::makeSound() const

@@ -4,7 +4,8 @@ Character::Character(std::string name)
 {
 	this->_name = name;
 	for(int i = 0; i < 4; i++)
-		_inventory[i] = nullptr;
+		_inventory[i] = NULL;
+	std::cout << "4_Character class constructor called" << std::endl;
 }
 
 Character:: ~Character()
@@ -14,6 +15,7 @@ Character:: ~Character()
 		if(_inventory[i])
 			delete _inventory[i];
 	}
+	std::cout << "4_Character class destructor called" << std::endl;
 }
 
 Character::Character(const Character& c_name)
@@ -48,7 +50,7 @@ void Character::equip(AMateria* m)
 void Character::unequip(int idx)
 {
 	if (!_inventory[idx])
-		_inventory[idx] = nullptr;
+		_inventory[idx] = NULL;
 }
 void Character::use(int idx, ICharacter& target)
 {
