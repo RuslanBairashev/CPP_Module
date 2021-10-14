@@ -1,6 +1,6 @@
 # Makefile for CCP06/ex00
 
-NAME = fixed
+NAME = cast
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 SOURCES = main.cpp
