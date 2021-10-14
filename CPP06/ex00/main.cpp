@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cstring>
 
 int	print_err(std::string str)
 {
@@ -15,9 +16,20 @@ struct t_list
 	double		d_out;
 };
 
-int	is_char(std::string str)
+int	is_char(std::string str, t_list *out_vals)
 {
-	if (std::strlen(str) == 1)
+	char	c;
+
+	if (str.length() != 1)
+		return 1;
+	c = static_cast<char>(str[0]);
+	if (!isprint(c) || isdigit(c))
+		return 1;
+	//if (isprint(c) && !isdigit(c))
+	out_vals->char_out = c;
+	out_vals->int_out = static_cast<int>(out_vals->char_out);
+	out_vals->float_out = static_cast<float>(out_vals->int_out);
+	
 	return 0;
 }
 
@@ -29,15 +41,13 @@ int	main(int ac, char** av)
 	if (ac != 2)
 		return print_err("Error: number of arguments must 2!");
 	input_str = av[1];
+	memset(&out_vals, 0, sizeof(out_vals));
 
-	is_char(input_str);
-	/*
-	std::cout << input_str << std::endl;
-	char_out = static_cast<char>(input_str[0]);
-	std::cout << char_out << std::endl;
-	int_out = static_cast<int>(char_out);
-	std::cout << int_out << std::endl;
-	float_out = static_cast<float>(int_out);
-	std::cout << float_out << std::endl;
-	/*
+	if(is_char(input_str, &out_vals))
+		is_int(input_str, &out_vals)
+
+	std::cout << std::cout.precision() << std::endl;
+	std::cout << "\'" << out_vals.char_out << "\'" << std::endl;
+	std::cout << out_vals.int_out << std::endl;
+	std::cout << out_vals.float_out << std::endl;
 }
