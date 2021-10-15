@@ -24,7 +24,6 @@ public:
 	int			getGrade() const;
 
 	void		signForm(Form& c_name);
-	//void		executeForm(Form const & c_name);
 	void		executeForm(Form const & c_name) const;
 
 	class TooHigh: public std::exception

@@ -4,11 +4,12 @@ NAME = bure
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 SOURCES = main.cpp Bureaucrat.cpp
+HEADERS = Bureaucrat.hpp
 OBJECTS = $(SOURCES:.cpp=.obj)
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
+$(NAME): $(OBJECTS) $(HEADERS)
 	$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
 
 %.obj: %.cpp

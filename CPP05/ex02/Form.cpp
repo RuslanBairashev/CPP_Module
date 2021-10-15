@@ -49,22 +49,6 @@ std::string	Form::getName() const { return _formName; }
 bool		Form::getStatus() const { return _isSigned; }
 int			Form::getSignGrade() const {return _signGrade; }
 int			Form::getExecGrade() const {return _execGrade; }
-/*
-void	Form::beSigned(Bureaucrat& c_name)
-{
-	try
-	{
-		if (c_name.getGrade() > this->getSignGrade())
-			throw Form::TooLow();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	this->_isSigned = true;
-	c_name.signForm(*this);
-}
-*/
 
 void	Form::beSigned(Bureaucrat& c_name)
 {
