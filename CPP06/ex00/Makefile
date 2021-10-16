@@ -3,8 +3,8 @@
 NAME = cast
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SOURCES = main.cpp
-HEADERS = 
+SOURCES = main.cpp Casting.cpp
+HEADERS = Casting.hpp
 OBJECTS = $(SOURCES:.cpp=.obj)
 
 all: $(NAME)
