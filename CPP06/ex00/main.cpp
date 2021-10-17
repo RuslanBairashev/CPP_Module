@@ -17,7 +17,9 @@ int	main(int ac, char** av)
 	Casting	Mycast(av[1]);
 	if (Mycast.is_char())
 		if(Mycast.is_int())
-			Mycast.is_float();
+			if(Mycast.is_float())
+				if(Mycast.is_naninf())
+					Mycast.is_impossible();
 	Mycast.print_res();
 
 	return 0;

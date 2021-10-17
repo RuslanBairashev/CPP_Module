@@ -6,6 +6,7 @@
 #include <cstring>
 #include <cstdlib>
 #include <limits.h>
+#include <iomanip>
 
 class Casting
 {
@@ -17,15 +18,19 @@ private:
 	double		d_out_;
 	char		char_text_[16];
 	char		int_text_[16];
-	//char		*float_text_;
-	//char		*d_text_;
+	char		float_text_[16];
+	char		d_text_[16];
 public:
 	Casting(std::string str);
 	~Casting();
+	Casting(const Casting& c_name);
+	Casting&	operator=(const Casting& c_name);
 
 	int		is_char();
 	int		is_int();
 	int		is_float();
+	int		is_naninf();
+	void	is_impossible();
 	void	print_res();
 };
 
