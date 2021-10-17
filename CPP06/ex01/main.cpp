@@ -1,5 +1,6 @@
 #include <iostream>
-#include <stdint.h>
+
+typedef unsigned long uintptr_t;
 
 struct Data
 {
@@ -8,8 +9,6 @@ struct Data
 
 uintptr_t	serialize(Data* ptr)
 {
-	//void	*tmp;
-	//tmp = reinterpret_cast<void*>(ptr);
 	return reinterpret_cast<uintptr_t>(ptr);
 }
 

@@ -2,7 +2,7 @@
 
 NAME = cast
 CC = clang++
-CFLAGS = -Wall -Wextra -Werror -std=c++03
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 SOURCES = main.cpp
 HEADERS = 
 OBJECTS = $(SOURCES:.cpp=.obj)
