@@ -51,3 +51,5 @@ int main(int, char**)
     delete [] mirror;//
     return 0;
 }
+
+https://metanit.com/cpp/c/5.11.php
