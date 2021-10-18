@@ -1,8 +1,8 @@
 #include <iostream>
-#include <Array.hpp>
+#include "Array.hpp"
 
 #define MAX_VAL 750
-int main(int, char**)
+int main()
 {
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
@@ -27,22 +27,22 @@ int main(int, char**)
             return 1;
         }
     }
-    try
+    /*try
     {
         numbers[-2] = 0;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
-    }
-    try
+    }*/
+    /*try
     {
         numbers[MAX_VAL] = 0;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
-    }
+    }*/
 
     for (int i = 0; i < MAX_VAL; i++)
     {
@@ -52,4 +52,4 @@ int main(int, char**)
     return 0;
 }
 
-https://metanit.com/cpp/c/5.11.php
+//https://metanit.com/cpp/c/5.11.php
