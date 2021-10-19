@@ -43,7 +43,7 @@ Casting&	Casting::operator=(const Casting& c_name)
 int	Casting::is_char()
 {
 	char	tmp;
-
+	
 	if ((this->str_)->length() != 1)
 		return 1;
 	tmp = static_cast<char>((*(this->str_))[0]);
@@ -115,9 +115,9 @@ int		Casting::is_float()
 		std::strncpy(this->int_text_, "impossible", 16);
 	else
 		this->int_out_ = static_cast<int>(this->d_out_);
-	if (this->int_out_ < 32 || this->int_out_ == 127)
+	if ((this->int_out_ < 32 || this->int_out_ == 127) && !this->int_text_[0])
 		std::strncpy(this->char_text_, "Non displayable", 16);
-	else if (this->int_out_ > 127)
+	else if (this->int_out_ > 127 || this->int_text_[0])
 		std::strncpy(this->char_text_, "impossible", 16);
 	else
 		this->char_out_ = static_cast<char>(this->int_out_);

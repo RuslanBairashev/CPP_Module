@@ -100,6 +100,7 @@ int	main()
 	identify(tmp);
 	std::cout << "identify(Base& p) output: ";
 	identify(*tmp);
+	delete tmp;
 
 	return 0;
 }
