@@ -14,13 +14,6 @@ private:
 public:
 	Array(): _array(new T[0]), _length(0) {}
 	Array(unsigned int n): _array(new T[n]), _length(n) {}
-	/*{
-		assert(n >= 0);
-		_length = n;
-		_array = new T[n];
-		for(unsigned int i = 0; i < n; i++)
-			_array[i] = 0;
-	}*/
 	~Array() { delete[] _array; }
 
 	Array(const Array& c_name)

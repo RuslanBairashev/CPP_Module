@@ -20,10 +20,10 @@ int main( void )
 	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
 
 	Awesome aa(2), bb(4);
-	swap(aa, bb);
-	std::cout << aa << " " << bb << std::endl;
-	std::cout << max(aa, bb) << std::endl;
-	std::cout << min(aa, bb) << std::endl;
+	::swap(aa, bb);
+	std::cout << "aa = " << aa << ", b = " << bb << std::endl;
+	std::cout << "min( aa, bb ) = " << ::max(aa, bb) << std::endl;
+	std::cout << "max( aa, bb ) = " << ::min(aa, bb) << std::endl;
 
 	return 0;
 }
