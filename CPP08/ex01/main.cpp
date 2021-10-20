@@ -63,5 +63,3 @@ int		main()
 		std::cerr << e.what() << '\n';
 	}
 }
-
-//https://stackoverflow.com/questions/525365/does-stdstack-expose-iterators
