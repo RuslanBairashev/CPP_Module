@@ -54,8 +54,14 @@ int		main()
 	{
 		std::cerr << e.what() << '\n';
 	}
+	try
+	{
 	std::cout << "The longest span is: " << extra.longestSpan() << std::endl;
-
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 }
 
 //https://stackoverflow.com/questions/525365/does-stdstack-expose-iterators

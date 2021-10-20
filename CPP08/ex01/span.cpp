@@ -5,7 +5,16 @@ class OutOfRange: public std::exception
 	public:
 		const char* what() const throw()
 		{
-			return "Array::OutOfRangeException";
+			return "Span::OutOfRangeException";
+		}
+};
+
+class VectorToSmall: public std::exception
+{
+	public:
+		const char* what() const throw()
+		{
+			return "Span::VectorToSmall";
 		}
 };
 
@@ -23,27 +32,18 @@ Span::Span(std::vector<int> & arr_copy)
 	copy(arr_copy.begin(),arr_copy.end(),back_inserter(array_));
 }
 
-Span::~Span()
-{
-}
-/*
-Array(const Array& c_name)
-{
-	_array = new T[c_name._length];
-	*_array = *c_name._array;
-}
+Span::~Span() {}
 
-Array&	operator=(const Array& c_name)
+Span::Span(const Span& c_name) { *this = c_name; }
+
+Span&	Span::operator=(const Span& c_name)
 {
 	if (this == &c_name)
 		return *this;
-	delete [] _array;
-	_length = c_name._length;
-	_array = new T[c_name._length];
-	*_array = *c_name._array;
+	*this = c_name;
 	return *this;
 }
-*/
+
 int&	Span::operator[](unsigned int ind)
 {
 	if(ind < 0 || ind > (maxN_ - 1))
@@ -65,6 +65,8 @@ unsigned int		Span::getActN() const { return actN_; }
 
 int		Span::longestSpan() const
 {
+	if (array_.size() < 2)
+		throw VectorToSmall();
 	std::vector<int>::const_iterator	max_res;
 	max_res = std::max_element(array_.begin(), array_.end());
 
@@ -76,22 +78,20 @@ int		Span::longestSpan() const
 int		Span::shortestSpan() const
 {
 	int									span(0);
-	int									b;
 	std::vector<int>::const_iterator	it;
 	std::vector<int>::const_iterator	inner_it;
 
 	if (array_.size() < 2)
-		throw OutOfRange();
-	span = std::max(array_[0], array_[1]) - std::min(array_[0], array_[1]);
+		throw VectorToSmall();
+	span = std::abs(array_[0] - array_[1]);
 	it = array_.begin();
 	while (it < array_.end())
 	{
 		inner_it = it + 1;
 		while (inner_it < array_.end())
 		{
-			b = abs(*it - *inner_it);
-			if (b < span)
-				span = b;
+			if (std::abs(*it - *inner_it) < span)
+				span = std::abs(*it - *inner_it);
 			inner_it++;
 		}
 		it++;

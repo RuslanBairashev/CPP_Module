@@ -15,6 +15,8 @@ private:
 public:
 	Span(unsigned int N);
 	Span(std::vector<int> & arr);
+	Span(const Span& c_name);
+	Span&	operator=(const Span& c_name);
 	~Span();
 
 	int&			operator[](unsigned int ind);
@@ -23,9 +25,6 @@ public:
 	unsigned int	getActN() const;
 	int				shortestSpan() const;
 	int				longestSpan() const;
-	
 };
-
-
 
 #endif
