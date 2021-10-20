@@ -4,6 +4,7 @@
 #include <iostream>
 #include <algorithm>
 #include <deque>
+#include <stack>
 
 template <typename T>
 class MutantStack: public std::stack<T>
@@ -14,7 +15,7 @@ public:
 	MutantStack();
 	~MutantStack();
 };
-
+/*
 MutantStack::MutantStack()
 {
 }
@@ -22,6 +23,6 @@ MutantStack::MutantStack()
 MutantStack::~MutantStack()
 {
 }
-
+*/
 
 #endif
