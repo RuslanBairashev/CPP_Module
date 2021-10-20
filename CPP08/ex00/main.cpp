@@ -1,7 +1,7 @@
 #include "easyfind.hpp"
 
-#define N1 3
-#define N2 10
+#define N1 5
+#define N2 5
 
 int	main()
 {
