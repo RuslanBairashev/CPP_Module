@@ -23,9 +23,11 @@ int main()
 	MutantStack<int>::iterator ite = mstack.end();
 	++it;
 	--it;
-	while (it != ite) {
+	while (it != ite)
+	{
 		std::cout << *it << std::endl;
-	++it; }
+		++it;
+	}
 	std::stack<int> new_mstack(mstack);
 	std::cout << "The element om the top: " << new_mstack.top() << std::endl;
 	std::cout << "Copy Stack size: " << new_mstack.size() << std::endl << std::endl;
@@ -46,9 +48,11 @@ int main()
 	std::list<int>::iterator itel = lst.end();
 	++itl;
 	--itl;
-	while (itl != itel) {
+	while (itl != itel)
+	{
 		std::cout << *itl << std::endl;
-	++itl; }
+		++itl;
+	}
 	std::list<int> new_lst(lst);
 
 	return 0;

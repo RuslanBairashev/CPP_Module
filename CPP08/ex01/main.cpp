@@ -1,6 +1,6 @@
 #include "span.hpp"
 
-#define MAX 10000
+#define MAX 100
 
 void	print_array(Span & sp)
 {
@@ -70,6 +70,17 @@ int		main()
 	{
 		std::cerr << e.what() << '\n';
 	}
+
+	std::cout << std::endl << "______Koko tests_____________\n";
+	Span	koko = Span(10);
+	static const int arr[] = { 0,1,2,3,4,5,6,7,8,9 };
+	std::vector<int> sample (arr, arr + sizeof(arr) / sizeof(arr[0]) );
+	std::vector<int>::iterator	ibegin;
+	std::vector<int>::iterator	iend;
+	ibegin = sample.begin();
+	iend = sample.begin()+5;
+	koko.addIter(ibegin, iend);
+	print_array(koko);
 
 	return 0;
 }

@@ -22,6 +22,8 @@ public:
 	int&			operator[](unsigned int ind);
 	void			addNumber(int num);
 	void			addAll(Span & Span_copy);
+	void			addIter(std::vector<int>::iterator	ibegin, \
+	std::vector<int>::iterator	iend);
 	int				getNumber(unsigned int ind) const;
 	unsigned int	getActN() const;
 	int				shortestSpan() const;

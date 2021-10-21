@@ -18,11 +18,7 @@ class VectorToSmall: public std::exception
 		}
 };
 
-Span::Span(unsigned int N): maxN_(N), actN_(0)
-{
-	//memset(&array_, 0, array_.size());
-	//this->array_.resize(N);
-}
+Span::Span(unsigned int N): maxN_(N), actN_(0) {}
 
 Span::Span(std::vector<int> & arr_copy)
 {
@@ -55,7 +51,6 @@ void	Span::addNumber(int num)
 {
 	if (actN_ >= maxN_)
 		throw OutOfRange();
-	//array_[actN_] = num;
 	this->array_.push_back(num);
 	actN_++;
 }
@@ -66,6 +61,18 @@ void	Span::addAll(Span & Span_copy)
 		throw OutOfRange();
 	actN_ += Span_copy.array_.size();
 	copy(Span_copy.array_.begin(),Span_copy.array_.end(),back_inserter(array_));
+}
+
+void	Span::addIter(std::vector<int>::iterator	ibegin, \
+	std::vector<int>::iterator	iend)
+{
+	if (iend > ibegin)
+	{
+		if (actN_ + (iend - ibegin) > maxN_)
+			throw OutOfRange();
+		copy(ibegin, iend ,back_inserter(array_));
+		this->actN_ +=(iend - ibegin);
+	}
 }
 
 int		Span::getNumber(unsigned int ind) const { return array_[ind]; }
