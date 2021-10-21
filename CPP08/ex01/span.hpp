@@ -21,6 +21,7 @@ public:
 
 	int&			operator[](unsigned int ind);
 	void			addNumber(int num);
+	void			addAll(Span & Span_copy);
 	int				getNumber(unsigned int ind) const;
 	unsigned int	getActN() const;
 	int				shortestSpan() const;

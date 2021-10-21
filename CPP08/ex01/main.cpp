@@ -45,6 +45,14 @@ int		main()
 	std::srand ( unsigned ( std::time(0) ) );
 	std::generate (big.begin(), big.end(), RandomNumber);
 	Span	extra = Span(big);
+	try
+	{
+		extra.addNumber(3);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	//print_array(extra);
 	try
 	{
@@ -56,10 +64,12 @@ int		main()
 	}
 	try
 	{
-	std::cout << "The longest span is: " << extra.longestSpan() << std::endl;
+		std::cout << "The longest span is: " << extra.longestSpan() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
+
+	return 0;
 }

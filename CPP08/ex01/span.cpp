@@ -60,6 +60,14 @@ void	Span::addNumber(int num)
 	actN_++;
 }
 
+void	Span::addAll(Span & Span_copy)
+{
+	if (actN_ + Span_copy.array_.size() > maxN_)
+		throw OutOfRange();
+	actN_ += Span_copy.array_.size();
+	copy(Span_copy.array_.begin(),Span_copy.array_.end(),back_inserter(array_));
+}
+
 int		Span::getNumber(unsigned int ind) const { return array_[ind]; }
 unsigned int		Span::getActN() const { return actN_; }
 
