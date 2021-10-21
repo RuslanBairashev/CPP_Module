@@ -10,7 +10,7 @@ template<typename T >
 class MutantStack: public std::stack<T>
 {
 public:
-	MutantStack(): std::stack<T> {}
+	MutantStack(): std::stack<T>() {}
 	~MutantStack() {}
 	MutantStack(MutantStack & c_name) { *this = *c_name; }
 	MutantStack&	operator=(const MutantStack& c_name)
