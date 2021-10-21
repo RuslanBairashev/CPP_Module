@@ -1,6 +1,6 @@
 # Makefile for CCP08/ex012
 
-NAME = easyfind
+NAME = mystack
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 SOURCES = main.cpp mutantstack.cpp
