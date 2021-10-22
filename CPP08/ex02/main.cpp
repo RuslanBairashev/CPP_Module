@@ -1,4 +1,3 @@
-//https://stackoverflow.com/questions/525365/does-stdstack-expose-iterators
 #include "mutantstack.hpp"
 #include <list>
 
